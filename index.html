@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="asm.css">
+    <link rel="icon" href="img/logowebsite.png">
+    <title>Jewelry Desi Shop</title>
+</head>
+
+<body>
+    <section class="container">
+        <header>
+            <div class="banner-header">
+                <img src="img/s2.jpg" alt="" width="100%" height="350px">
+                <i class="fa-solid fa-angle-left" onclick="prev()"></i>
+                <i class="fa-solid fa-angle-right" onclick="next()"></i>
+
+                <script>
+                    var hinh = [
+                        'img/s2.jpg',
+                        'img/s1.jpg',
+                        'img/s3.jpg',
+                        'img/s4.jpg',
+                        'img/s5.jpg',
+                    ];
+            
+                    let index = 0;
+                    function next(){
+                        index++;
+                        if(index == hinh.length) {
+                            index = 0;
+                        }
+                        document.querySelector('img').src = hinh[index];
+                    }
+            
+                    function prev(){
+                        index--;
+                        if(index<0){
+                            index = hinh.length - 1;
+                        } 
+                        document.querySelector('img').src = hinh[index];
+                    }
+            
+                    setInterval('next()', 2500);
+                </script>
+                <a href="index.html" class="logo">JW<span>Desi</span></a>
+                <!-- <p class="content-banner">Thời trang - Phong cách</p> -->
+                <!-- <div class="buy">
+                    <div class="btn-buy">
+                        <a href="product.html">MUA NGAY</a>
+                    </div>
+                </div> -->
+            </div>
+            <div class="icons-header">
+                <div class="wrap">
+                    <form action="" class="search" method="post">
+                        <input type="text" class="searchTerm" placeholder="Bạn muốn tìm gì?">
+                        <button type="submit" class="searchButton">
+                            Tìm
+                        </button>
+                    </form>
+                </div>
+                <a href="cart.html"><i class="fa-solid fa-cart-shopping">&nbsp;<span id="countCart">0</span></i></a>
+                <a href="signup.html"><i class="fa-solid fa-user"></i></a>
+            </div>
+        </header>
+
+        <nav class="menu">
+            <a href="#">TRANG CHỦ</a>
+            <a href="product.html">SẢN PHẨM</a>
+            <a href="introduction.html">THƯƠNG HIỆU</a>
+            <a href="#">QUÀ TẶNG</a>
+            <a href="#">BLOG </a>
+        </nav>
+        <section class="body">
+            <section class="contentx">
+                <article>
+                    <div class="title-pro">SẢN PHẨM</div>
+
+                    <div class="filter">
+                        <div class="list">
+                            <ul class="item">
+                                <li><a href="#">Loại</a></li> |
+                                <li><a href="#">Thương hiệu</a></li> |
+                                <li><a href="#">Chất liệu</a></li> |
+                                <li><a href="#">Giá</a></li> |
+                                <li><a href="#">Màu</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="product">
+                        <p id="productView"></p>
+                    </div>
+
+                    <script>
+                        var products = [
+                            { id: 0, img: "img/product1.1.jpg", name: "Vòng tay <br> đồng tiền vàng", price: 349000, src: "detail.html", new: "img/new.png", quantity: 1 },
+                            { id: 1, img: "img/product2.1.jpg", name: "Vòng hồng ngọc <br> phong thủy", price: 279000, src: "detail2.html", new: "img/new.png", quantity: 1 },
+                            { id: 2, img: "img/product3.1.jpg", name: "Nhẫn trái tim <br> kim cương vàng", price: 249000, src: "detail3.html", new: "img/new.png", quantity: 1 },
+                            { id: 3, img: "img/product4.1.jpg", name: "Dây chuyền kim <br>cương lấp lánh", price: 2499000, src: "detail4.html", new: "img/new.png", quantity: 1 },
+                            { id: 4, img: "img/product5.1.jpg", name: "Vòng tay đính<br>ngọc trai", price: 309000, src: "detail5.html", new: "img/new.png", quantity: 1 },
+                            { id: 5, img: "img/product6.1.jpg", name: "Vòng cổ bạch <br> ngọc trai", price: 499000, src: "detail6.html", new: "img/new.png", quantity: 1 },
+                            { id: 6, img: "img/product7.1.jpg", name: "Hoa tai ngọc trai <br> hình quạt", price: 389000, src: "detail7.html", new: "img/new.png", quantity: 1 },
+                            { id: 7, img: "img/product8.1.jpg", name: "Hoa tai hoa dâu <br> kim cương", price: 389000, src: "detail8.html", new: "img/new.png", quantity: 1 },
+                            { id: 8, img: "img/product9.1.jpg", name: "Dây chuyền vàng <br> hoa hồng", price: 599000, src: "detail9.html", new: "img/new.png", quantity: 1 },
+                            { id: 9, img: "img/product10.1.jpg", name: "Vòng tay xâu <br>ngọc trai", price: 289000, src: "detail10.html", new: "img/new.png", quantity: 1 },
+                            { id: 10, img: "img/product11.1.jpg", name: "Khuyên tai hoa <br> ba tầng", price: 389000, src: "detail11.html", new: "img/new.png", quantity: 1 },
+                            { id: 11, img: "img/product12.1.jpg", name: "Lắc tay vàng <br> hoa cúc nhỏ", price: 599000, src: "detail12.html", new: "img/new.png", quantity: 1 },
+                        ];
+                        var sp = "";
+                        for (var i = 0; i < products.length; i++) {
+                            sp += '<div class="col-25">' +
+                                '<div class="prod">' + 
+                                    //detail.html?index=${i}
+                                '<a href="'+products[i].src+'"><img class="image" src="' + products[i].img + '"></a>'
+                                + '<div class="price">' + products[i].price+'đ' + '</div>'
+                                + '<a href="' + products[i].src + '"><div class="name">' + products[i].name + '</div></a>'
+                                + '<ul class="icons">'
+                                + '<li><a href="#"><i class="fa-solid fa-heart" onclick="toggleClass()"></i></a></li>'
+                                + '<li><button onclick="addCart(' + products[i].id + ')">Mua</button></li>'
+                                + '</ul>'
+                                + '<div class="new-icon">'
+                                + '<img src="' + products[i].new + '" width="50px">'
+                                + '</div>'
+                                + '</div>'
+                                + '</div>'
+                        }
+                        document.getElementById('productView').innerHTML = sp;
+                        var cart = [];
+                        function addCart(index) {
+                            console.log(index);
+                            cart.push(products[index]);
+                            console.log(cart);
+                            document.getElementById('countCart').innerHTML = cart.length;
+
+                            // Mỗi khi add sẽ lưu vào cart;
+                            localStorage.setItem('cart', JSON.stringify(cart));
+                        }
+
+                        //tạo 1 biến cart để lưu trữ ở trình duyệt, lấy dữ liệu từ mảng cart index
+                        // Gọi có 1 lân ==> cart lưu trong local là mảng rỗng
+                        // localStorage.setItem('cart', JSON.stringify(cart)); 
+
+                    </script>
+                    <div class="more">
+                        <button>Xem thêm</button>
+                    </div>
+                </article>
+            </section>
+            <aside>
+                <ul class="vmenu">
+                    <div class="tiltle-aside">
+                        DANH MỤC
+                    </div>
+                    <li><a href="#">vòng, lắc tay</a></li>
+                    <li><a href="#">dây chuyền</a></li>
+                    <li><a href="#">nhẫn</a></li>
+                    <li><a href="#">khuyên tai</a></li>
+                    <li><a href="#">đồng hồ</a></li>
+                    <li><a href="#">trâm cài tóc </a></li>
+                    <li><a href="#">kẹp tóc đính đá</a></li>
+                    <li><a href="#"><b>sản phẩm trend</b></a></li>
+                    <li><a href="#"><b>sale 30%</b></a></li>
+                </ul>
+                <div class="img-aside">
+                    <img src="img/banner_doc.jpg" class="img-doc" alt="">
+                </div>
+            </aside>
+
+        </section>
+        <section class="introduction">
+            <div class="banner">
+                <img class="img-intro" src="img/introduction4.jpg" alt="">
+            </div>
+            <div class="content-intro">
+                <h3 class="content-1">Tại sao bạn nên lựa chọn chúng tôi?</h3>
+                <p class="content-2">Mỗi một người phụ nữ đều mang trong mình nét đẹp riêng & xứng đáng được ngưỡng mộ,
+                    được tôn vinh và được tự tin với chính con người mình. Phụ nữ luôn xứng đáng với những điều trọn vẹn
+                    nhất cho cuộc sống của mình: Hạnh phúc trọn vẹn, vẻ đẹp trọn vẹn và còn nhiều hơn thế. Jewelry Desi
+                    hơn cả một thương hiệu trang sức, mà còn là đại diện cho một phong cách sống của những giá trị hoàn
+                    mỹ xứng đáng nhất dành cho phụ nữ.</p>
+                <span class="content-3">"TRANG SỨC DESI - CHO PHỤ NỮ LUÔN TRỌN VẸN"</span>
+                <p class="btn"><a href="introduction.html">Xem thêm ></a> </p>
+            </div>
+        </section>
+
+        <div class="three-img">
+            <div class="img">
+                <img src="img/banner1.jpg" alt="">
+                <img src="img/banner2.jpg" alt="">
+                <img src="img/banner3.jpg" alt="">
+            </div>
+        </div>
+
+        <section class="icons-container">
+            <div class="icons">
+                <img src="img/icon-1.png" alt="">
+                <div class="info">
+                    <h3>miễn phí vận chuyển</h3>
+                    <span>với tất cả các đơn hàng</span>
+                </div>
+            </div>
+
+            <div class="icons">
+                <img src="img/icon-2.png" alt="">
+                <div class="info">
+                    <h3>10 ngày trả lại</h3>
+                    <span>đảm bảo hoàn tiền</span>
+                </div>
+            </div>
+
+            <div class="icons">
+                <img src="img/icon-3.png" alt="">
+                <div class="info">
+                    <h3>ưu đãi & quà tặng</h3>
+                    <span>trên tất cả các đơn hàng</span>
+                </div>
+            </div>
+
+            <div class="icons">
+                <img src="img/icon-4.png" alt="">
+                <div class="info">
+                    <h3>thanh toán an toàn</h3>
+                    <span>đảm bảo bởi paypal</span>
+                </div>
+            </div>
+        </section>
+
+
+        <footer>
+            <div class="footer-content">
+                <h3><b>liên hệ với chúng tôi</b></h3>
+                <p> Hotline: 0987835430 <br>
+                    Địa chỉ: 389, đường Tô Ký, phường Trung Mỹ Tây, quận 12, TPHCM
+                </p>
+                <ul class="socials">
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    Jewelry Desi Shop © 2023. All rights reserved.
+                </p>
+            </div>
+        </footer>
+
+        </div>
+    </section>
+</body>
+
+</html>

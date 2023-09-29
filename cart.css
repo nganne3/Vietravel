@@ -1,0 +1,372 @@
+body{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: auto;
+}
+
+.image {
+    width: 50px;
+    height: 50px;
+}
+
+.header-intro{
+    position: relative;
+    width: 100%;
+    display: block;
+    height: 40px;
+    background-color: #22223b;
+}
+
+.header-intro .icon-back{
+    height: 40px;
+    padding-top: 10px;
+    padding-left: 10px;
+    width: 100px;
+}
+
+.header-intro .icon-back a i{
+    color: #f2e9e4;
+    font-size: 20px;
+}
+
+.header-intro .icon-back a i:hover{
+    color: white;
+}
+
+.icons-header{
+    position: absolute;
+    left: 50px;
+    top: 0px;
+    margin: 0;
+    padding-left: 90% ;
+    padding-top: 4px;
+}
+
+.icons-header a i{
+    padding: 10px;
+    color:#f2e9e4;
+}
+
+.icons-header a i:hover{
+    color: #fb6f92;
+}
+
+
+.search {
+    width: 80%;
+    position: relative;
+    display: flex;
+
+}
+  
+.searchTerm {
+    width: 100%;
+    border: 2px solid #f2e9e4;
+    border-right: none;
+    padding: 3px;
+    height: 10px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+}
+  
+.searchTerm:focus{
+    color: #f2e9e4;
+}
+  
+.searchButton {
+    width: 60px;
+    height: 20px;
+    border: 1px solid #f2e9e4;
+    background: #f2e9e4;
+    text-align: center;
+    color: #22223b;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 15px;
+}
+  
+.wrap{
+    width: 20%;
+    position: absolute;
+    top: 51%;
+    left: 86%;
+    transform: translate(-54%, -50%);
+}
+
+.feeback{
+    margin-top: 5px;
+}
+
+.title{
+    height: 40px;
+    margin: 10px 10px;
+    background-color: #f1efef;
+    border-radius: 5px;
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: lighter;
+    box-shadow: 0 2px 2px 0 #ababad;
+}
+
+.title .left{
+    padding-top: 10px;
+    padding-left: 100px;
+    color: #22223b;
+    float: left;
+}
+
+.title .right{
+    padding-top: 10px;
+    padding-right: 100px;
+    color: #22223b;
+    float: right;
+}
+
+.product{
+    margin: 30px 10px;
+    box-shadow: 0px 2px 2px 0px #ababad;
+    height: 190px;
+}
+
+.product .img img{
+    margin-top: 20px;
+    margin-left: 70px;
+    border-radius: 5px;
+    border: 1px solid #d34a6a;
+    float: left;
+}
+
+.product .name{
+    width: 20%;
+    padding-top: 20px;
+    padding-left: 20px;
+    float: left;
+    font-size: 18px;
+}
+
+.product .name a{
+    text-decoration: none;
+    color: #333;
+}
+
+.product .name .sale{
+    background-color: #fb6f92;
+    width: 55%;
+    color: white;
+    font-size: 15px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.product .name .freeship{
+    background-color: #527e59;
+    width: 50%;
+    color: white;
+    font-size: 15px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.product .price, .quantity, .soTien, .delete{
+    float: right;
+}
+
+.product .delete{
+    padding-top: 70px;
+    padding-right: 120px;
+}
+
+.product .delete a{
+    text-decoration: none;
+    color: #fb6f92;
+}
+
+.product .soTien{
+    padding-top: 70px;
+    padding-right: 110px;
+}
+
+.product .quantity{
+    padding-top: 70px;
+    padding-right: 20px;
+}
+
+.product .price{
+    padding-top: 70px;
+    padding-right: 90px;
+}
+
+.product input{
+    width: 30%;
+}
+
+.payment{
+    float: right;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 100px;
+    padding: 0;
+    background-color: white;
+    margin-bottom: 50px;
+    font-family: sans-serif;
+}
+
+.payment .total{
+    width: 30%;
+    float: right;
+    margin-right: 100px;
+    color: #333;
+    font-size: 15px;
+    line-height: 25px;
+}
+
+.payment .total #right{
+    float: right;
+}
+
+.payment .total input{
+    margin-top: 5px;
+    width: 80%;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+.apply{
+    background-color: #22223b;
+    width: 20%;
+    padding: 6px;
+    border-radius: 5px;
+}
+
+.payment .total a{
+    text-decoration: none;
+    color: white;
+}
+
+.payment .total .order{
+    float: right;
+    width: 95%;
+    padding: 10px;
+    background-color: #d34a6a;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #f1efef;
+    font-size: 18px;
+    box-shadow: 0 5px 5px 0 #3e3e49;
+}
+
+.payment .total .order:hover{
+    background-color: #ccc;
+    color: #333;
+    transition: 0.8s;
+}
+
+table{
+    width: 100%;
+}
+
+th{
+    font-family: sans-serif;
+    font-size: 18px;
+    color: #494969;
+    border: none;
+    padding: 8px;
+    font-weight: bold;
+    text-align: center;
+}
+
+tr{
+    box-shadow: 0 2px 5px 0 #999;
+    color: #333;
+}
+
+td{
+    font-family: sans-serif;
+    font-size: 16px;
+    width: 300px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+td img{
+    border: 0.1px dotted #fb6f92;
+    border-radius: 5px;
+}
+
+.toMoney{
+    color: #d34a6a;
+}
+
+#changeQty{
+    font-weight: bold;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    background-color: rgb(69, 187, 69);
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px 0 #999;
+}
+
+#del{
+    padding: 10px 15px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    background-color: red;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px 0 #999;
+
+}
+
+.footer{
+    height: auto;
+    background-color: #22223b;
+    padding: 20px;
+    color: #ccc;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.footer-content h3{
+    font-size: 25px;
+    font-variant: small-caps;
+}
+
+.footer-content p{
+    font-size: 15px;
+}
+
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.socials a i{
+    color: #ccc;
+    padding: 5px;
+    outline: none;
+    border: 0;
+}
+
+.socials a i:hover{
+    color: white;
+}
+
+.footer> .footer-bottom>p{
+    color: #ccc;
+    font-size: 13px;
+}
+
+
+
+
+

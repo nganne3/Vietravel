@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="login.css">
+    <title>Form đăng ký</title>
+</head>
+<body>
+    <div class="container">
+        <h1>ĐĂNG KÝ</h1>
+
+        <p for="">Tên người dùng:</p>
+        <input type="text" id="user" placeholder="Nhập tên người dùng">
+        <p id="userError" style="color: red"></p>
+        <p for="">Mật khẩu:</p>
+        <input type="password" id="pass" placeholder="Nhập mật khẩu">
+        <p for="">Nhập lại mật khẩu:</p>
+        <input type="password" id="repass" placeholder="Nhập lại mật khẩu">
+        <p id="passError" style="color: red"></p>
+        <p for="">Họ tên đầy đủ:</p>
+        <input type="text" id="fullname" placeholder="Nhập họ tên đầy đủ">
+        <p for="">Email:</p>
+        <input type="text" id="email" placeholder="Nhập email">
+        <p id="emailError" style="color: red"></p>
+        <br>
+        <br>
+        <button onclick="register()">Đăng ký</button>
+        <p id="success" style="color: rgb(26, 146, 46)"></p>
+    </div>
+
+    <script>
+        var vUser = document.getElementById('user');
+        var vPass = document.getElementById('pass');
+        var vRePass = document.getElementById('repass');
+        var vFullName = document.getElementById('fullname');
+        var vEmail = document.getElementById('email');
+
+        var userArray = new Array();
+
+        function register(){
+            let check = true;
+            let userObject={
+                user: vUser.value,
+                pass: vPass.value,
+                repass: vRePass.value,
+                fullname: vFullName.value,
+                email: vEmail.value,
+            }
+
+            if(vUser.value.length<5){
+                check = false;
+                document.getElementById('userError').innerHTML= 'Tên người dùng phải lớn hơn 5 ký tự';
+                vUser.style.border = '1px solid red';
+            }
+
+            if(vPass.value != vRePass.value){
+                check = false;
+                document.getElementById('passError').innerHTML= 'Mật khẩu nhập lại phải trùng';
+                vPass.style.border = '1px solid red';
+                vRePass.style.border = '1px solid red';
+            }
+
+            if(!vEmail.value.includes('@')){
+                check = false;
+                document.getElementById('emailError').innerHTML= 'Email không hợp lệ';
+                vEmail.style.border = '1px solid red';
+            }
+            
+
+            if(check==true){
+                userArray.push(userObject);
+                console.log(userArray);
+            }
+
+            // console.log(userObject);
+
+            //trả form trống khi đăng ký thành công
+            if(vUser.value.length>=5 && vPass.value == vRePass.value && vEmail.value.includes('@')){
+                document.getElementById('user').value="";
+                document.getElementById('pass').value="";
+                document.getElementById('repass').value="";
+                document.getElementById('fullname').value="";
+                document.getElementById('email').value="";
+
+                document.getElementById('userError').innerHTML= "";
+                document.getElementById('passError').innerHTML= "";
+                document.getElementById('emailError').innerHTML= "";
+
+                vUser.style.border = '';
+                vPass.style.border = '';
+                vRePass.style.border = '';
+                vEmail.style.border = '';
+
+                document.getElementById('success').innerHTML= 'Đăng ký thành công!';
+            }
+        }
+    </script>
+</body>
+</html>

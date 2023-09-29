@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="cart.css">
+    <link rel="icon" href="img/logowebsite.png">
+    <title>Giỏ hàng | Jewelry Desi Shop</title>
+</head>
+
+<body>
+    <div class="header-intro">
+        <div class="icon-back">
+            <a href="index.html"><i class="fa-solid fa-arrow-left"></i></a>
+        </div>
+        <div class="icons-header">
+            <div class="wrap">
+                <form action="" class="search" method="post">
+                    <input type="text" class="searchTerm" placeholder="Bạn muốn tìm gì?">
+                    <button type="submit" class="searchButton">
+                        Tìm
+                    </button>
+                </form>
+            </div>
+            <a href="#"><i class="fa-solid fa-message"></i></a>
+            <a href="signup.html"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </div>
+
+    <!-- <div class="title">
+        <span class="left">Sản phẩm</span>
+        <span class="right">Thao tác</span>
+        <span class="right">Số tiền</span>
+        <span class="right">Số lượng</span>
+        <span class="right">Đơn giá</span>
+    </div> -->
+
+    <div class="table">
+        <table>
+            <tr>
+                <th>SẢN PHẨM</th>
+                <th></th>
+                <th>ĐƠN GIÁ</th>
+                <th>SỐ LƯỢNG</th>
+                <th>THÀNH TIỀN</th>
+                <th>THAO TÁC</th>
+            </tr>
+            <tbody id="showCart"></tbody>
+            <!-- <tr>
+                <td colspan="4"></td>
+                <td id="idtotalMoney" colspan="2"></td>
+            </tr> -->
+        </table>
+
+        <div class="payment">
+            <div class="total">
+                <h3>Tổng tiền:</h3>
+                <span>Vận chuyển: </span>
+                <span id="right"><b>Miễn phí vận chuyển</b></span>
+                <br>
+                <span>Thành tiền (Đã bao gồm VAT): </span>
+                <span id="right"><b id="idtotalMoney"></b></span>
+                <br>
+                <span>Mã giảm giá/ Quà tặng: </span>
+                <br>
+                <input type="text"><span class="apply"><a href="#">Áp dụng</a></span>
+                <a class="order" href="signup.html"><b>Tiến hành đặt hàng</b></a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-content">
+                <h3><b>liên hệ với chúng tôi</b></h3>
+                <p> Hotline: 0987835430 <br>
+                    Địa chỉ: 389, đường Tô Ký, phường Trung Mỹ Tây, quận 12, TPHCM
+                </p>
+                <ul class="socials">
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    Jewelry Desi Shop © 2023. All rights reserved.
+                </p>
+            </div>
+        </div>
+
+        <script>
+            //đọc dữ liệu từ localstorage vào biến mảng cart
+            if (localStorage.getItem('cart') != null) {
+                var cart = JSON.parse(localStorage.getItem('cart'));
+            } else {
+                var cart = [];
+            }
+
+            console.log(document.getElementById("showCart"));
+            console.log(cart);
+
+            var sp = "";
+            for (var i = 0; i < cart.length; i++) {
+                sp += `
+                    <tr>
+                    <td>${cart[i]['name']}</td>
+                    <td><a href="${cart[i]['src']}"><img src="${cart[i]['img']}" width="170px"></a></td>
+                    <td>${cart[i]['price']}đ</td>
+                    <td>
+                        <button id="changeQty" onclick="giam(${i})">-</button>   
+                        &nbsp;${cart[i]['quantity']}&nbsp;
+                        <button id="changeQty" onclick="tang(${i})">+</button>
+                        </td>
+                    <td class="toMoney">${cart[i]['price'] * cart[i]['quantity']}đ</td>
+                    <td><button id="del" onclick="deleteP(${i})">Xóa</button></td>
+                    </tr>
+                    `;
+                document.getElementById("showCart").innerHTML = sp;
+            }
+
+            function tang(index){
+                cart[index].quantity+=1;
+                localStorage.setItem('cart', JSON.stringify(cart));
+                location.reload();
+            }
+
+            function giam(index){
+                cart[index].quantity-=1;
+                localStorage.setItem('cart', JSON.stringify(cart));
+                location.reload();
+            }
+
+            function deleteP(index) {
+                cart.splice(index, 1);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                location.reload();
+            }
+
+            function totalMoney() {
+                sum = 0;
+                for (let i = 0; i < cart.length; i++) {
+                    sum += cart[i].price * cart[i].quantity;
+                }
+                document.getElementById('idtotalMoney').innerHTML = sum+'đ';
+            }
+            totalMoney();
+        </script>
+
+</body>
+</html>

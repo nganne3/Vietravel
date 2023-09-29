@@ -1,0 +1,309 @@
+body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.header-intro {
+  position: relative;
+  width: 100%;
+  display: block;
+  height: 40px;
+  background-color: #22223b;
+}
+
+.header-intro .icon-back {
+  height: 40px;
+  padding-top: 10px;
+  padding-left: 10px;
+  width: 100px;
+}
+
+.header-intro .icon-back a i {
+  color: #f2e9e4;
+  font-size: 20px;
+}
+
+.header-intro .icon-back a i:hover {
+  color: white;
+}
+
+.icons-header {
+  position: absolute;
+  left: 50px;
+  top: 0px;
+  margin: 0;
+  padding-left: 90%;
+  padding-top: 4px;
+}
+
+.icons-header a i {
+  padding: 10px;
+  color: #f2e9e4;
+}
+
+.icons-header a i:hover {
+  color: #fb6f92;
+}
+
+
+.search {
+  width: 80%;
+  position: relative;
+  display: flex;
+
+}
+
+.searchTerm {
+  width: 100%;
+  border: 2px solid #f2e9e4;
+  border-right: none;
+  padding: 3px;
+  height: 10px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus {
+  color: #fb6f92;
+}
+
+.searchButton {
+  width: 60px;
+  height: 20px;
+  border: 1px solid #fb6f92;
+  background: #fb6f92;
+  text-align: center;
+  color: #333;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.wrap {
+  width: 20%;
+  position: absolute;
+  top: 51%;
+  left: 86%;
+  transform: translate(-54%, -50%);
+}
+
+.feeback {
+  margin-top: 5px;
+}
+
+.body {
+  width: 100%;
+  min-height: 840px;
+}
+
+.image {
+  width: 40%;
+  height: 40%;
+  margin: 0;
+  padding: 0;
+  float: left;
+  position: relative;
+}
+
+.image .image-pro img {
+  width: 80%;
+  height: 80%;
+  margin-top: 60px;
+  margin-left: 100px;
+  border: 2px solid #c9c9d3;
+  border-radius: 14px;
+  box-shadow: 0 5px 5px 0 #e4c4d7;
+}
+
+.image-three {
+  margin-left: 130px;
+  width: 80%;
+  height: 80%;
+}
+
+.image-three span i {
+  font-size: 40px;
+  color: #999;
+  cursor: pointer;
+}
+
+.image-three span img {
+  border: 1px solid #999;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.fa-angle-left {
+  top: 45%;
+  left: 120px;
+  font-size: 40px;
+  position: absolute;
+  color: #666;
+  cursor: pointer;
+}
+
+.fa-angle-right {
+  top: 45%;
+  right: 20px;
+  font-size: 40px;
+  position: absolute;
+  color: #666;
+  cursor: pointer;
+}
+
+.infor {
+  font-family: sans-serif;
+  float: left;
+  width: 50%;
+  height: 550px;
+  padding-top: 30px;
+  padding-left: 60px;
+  padding-right: 40px;
+}
+
+.infor .pro {
+  margin-bottom: 15px;
+  font-size: 30px;
+  color: #22223b;
+  font-weight: bold;
+}
+
+.infor .list .item {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.infor .list .item li {
+  padding: 5px;
+}
+
+.infor .list .item li span {
+  font-weight: bold;
+}
+
+.infor .list .item li i {
+  color: yellow;
+}
+
+.infor h1 {
+  color: #fb6f92;
+  margin-bottom: 80px;
+}
+
+.infor p {
+  font-size: 15px;
+  color: #666;
+}
+
+.infor p i {
+  color: #fb6f92;
+}
+
+.infor p a {
+  padding: 2px;
+  background-color: #f7dfe5;
+  text-decoration: none;
+  color: #791931;
+}
+
+.infor .btn {
+  margin-top: 40px;
+}
+
+.infor .btn .btn-cart {
+  border-radius: 3px;
+  padding: 15px;
+  background-color: #f7dfe5;
+  border: 1px solid #fb6f92;
+}
+
+.infor .btn .btn-cart a {
+  padding: 15px;
+  text-decoration: none;
+  color: #f84e79;
+  font-weight: 550;
+}
+
+.infor .btn .btn-buy {
+  background-color: #fb6f92;
+  border-radius: 3px;
+  padding: 15px;
+  border: 1px solid #f84e79;
+}
+
+.infor .btn .btn-buy a {
+  background-color: #fb6f92;
+  padding: 15px;
+  text-decoration: none;
+  color: white;
+  font-weight: 550;
+}
+
+.input-qty {
+  width: 50px;
+}
+
+.content {
+  width: 80%;
+  height: 50%;
+  margin-left: 100px;
+  margin-bottom: 50px;
+}
+
+.content h2 {
+  font-family: sans-serif;
+  color: #0b0720;
+}
+
+.content p {
+  color: #333;
+  font-size: 18px;
+}
+
+.footer {
+  background-color: #22223b;
+  padding: 20px;
+  color: #ccc;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer-content h3 {
+  font-size: 30px;
+  font-variant: small-caps;
+  color: #ccc;
+}
+
+.footer-content p {
+  font-size: 16px;
+}
+
+.socials {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.socials a i {
+  color: #ccc;
+  padding: 5px;
+  outline: none;
+  border: 0;
+}
+
+.socials a i:hover {
+  color: white;
+}
+
+.footer>.footer-bottom>p {
+  color: #ccc;
+  font-size: 16px;
+}
